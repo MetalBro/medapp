@@ -8,18 +8,19 @@ import ru.hostapp.service.ProcedureService;
 
 import java.util.List;
 
+//@RequestMapping(value = ProcedureController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 @RestController
-@RequestMapping(value = ProcedureController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class ProcedureController {
 
     static final String REST_URL = "/rest/procedures";
 
+    @Autowired
     private ProcedureService procedureService;
 
-    @Autowired
-    public ProcedureController(ProcedureService procedureService) {
-        this.procedureService = procedureService;
-    }
+//    @Autowired
+//    public ProcedureController(ProcedureService procedureService) {
+//        this.procedureService = procedureService;
+//    }
 
     @GetMapping
     public List<Procedure> getProcedures(){
