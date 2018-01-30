@@ -27,7 +27,7 @@ public class RootController extends SelectorComposer<Component>{
     private Listbox procedureListBox;
 
     @WireVariable("procedureServiceImpl")
-    private ProcedureService procedureService;
+    public ProcedureService procedureService;
 
     @Listen("onClick = #showAllButton")
     public void getAll(){

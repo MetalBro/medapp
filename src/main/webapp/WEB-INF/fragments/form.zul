@@ -1,0 +1,76 @@
+<!--<?link rel="stylesheet" type="text/css" href="/style.css"?>-->
+<window id="modalForm"
+        closable="true"
+        title="Procedure's form"
+        apply="ru.hostapp.web.procedure.FormController"
+        border="normal" hflex="1" vflex="1"
+        >
+    <!--contentStyle="overflow:auto"-->
+
+    <!--<caption src="/imgs/profile.png" sclass="fn-caption"-->
+             <!--label="Profile (MVC)"/>-->
+    <vlayout>
+        <grid width="600px">
+            <columns>
+                <column align="right" hflex="min"/>
+                <column/>
+            </columns>
+            <rows>
+                <row>
+                    <cell sclass="row-title">Procedure :</cell>
+                    <cell><label id="procedure"/></cell>
+                </row>
+                <row>
+                    <cell sclass="row-title">Name :</cell>
+                    <cell>
+                        <textbox id="name"
+                                 constraint="no empty: Please enter procedure's name"
+                                 hflex="1"/>
+                    </cell>
+                </row>
+                <row>
+                    <cell sclass="row-title">Specialist :</cell>
+                    <cell>
+                        <textbox id="specialist"
+                                 constraint="no empty: Please enter the name of the specialist"
+                                 hflex="1"/>
+                    </cell>
+                </row>
+                <row>
+                    <cell sclass="row-title">Price (RUB) :</cell>
+                    <cell><decimalbox id="price" format="######.##" constraint="no empty, no negative, no zero" maxlength="8"
+                                   width="100px"/>
+                    </cell>
+                </row>
+                <row>
+                    <cell sclass="row-title">Day :</cell>
+                    <cell>
+                        <selectbox id="dayListBox" width="140px">
+                            <template name="model">
+                                <label value="${each}" />
+                            </template>
+                        </selectbox>
+                    </cell>
+                </row>
+                <row>
+                    <cell sclass="row-title">Time :</cell>
+                    <cell>
+                        <timebox id="daytimeBox" format="short" constraint="no empty"
+                        width="140px"/>
+                    </cell>
+                </row>
+                <row>
+                    <cell sclass="row-title">Room :</cell>
+                    <cell><intbox id="room" constraint="no empty, no negative, no zero"
+                                width="100px"/>
+                    </cell>
+                </row>
+            </rows>
+        </grid>
+        <!--<div>You are editing <label id="nameLabel"/> procedure.</div>-->
+        <hlayout>
+            <button id="saveProcedure" label="Save"/>
+            <!--<button id="reloadProfile" label="Reload"/>-->
+        </hlayout>
+    </vlayout>
+</window>

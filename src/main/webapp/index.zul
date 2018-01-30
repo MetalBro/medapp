@@ -1,0 +1,10 @@
+<zk>
+    <borderlayout hflex="1" vflex="1">
+        <north height="10%" border="none" >
+            <include src="WEB-INF/fragments/header.zul"/>
+        </north>
+        <center id="mainContent" autoscroll="true">
+            <include src="WEB-INF/fragments/main.zul"/>
+        </center>
+    </borderlayout>
+</zk>

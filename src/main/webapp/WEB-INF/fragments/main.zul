@@ -1,0 +1,26 @@
+<window title="List of procedures you can take" border="normal" apply="ru.hostapp.web.RootController">
+    <vbox spacing="5">
+        <hbox align="left" spacing="2">
+            <button id="showAllButton" label="Show list of all available procedures"/>
+            <button id="addButton" label="Add procedure" apply="ru.hostapp.web.procedure.ProcedureAdminController"/>
+        </hbox>
+        <listbox id="procedureListBox" rows="10" emptyMessage="No procedure found in the result">
+            <listhead>
+                <listheader label="Name" />
+                <listheader label="Specialist" />
+                <listheader label="Price, RUB" />
+                <listheader label="Date" />
+                <listheader label="Room" />
+            </listhead>
+            <template name="model">
+                <listitem>
+                    <listcell label="${each.name}"></listcell>
+                    <listcell label="${each.specialist}"></listcell>
+                    <listcell label="${each.price}"></listcell>
+                    <listcell label="${each.date}"></listcell>
+                    <listcell label="${each.room}"></listcell>
+                </listitem>
+            </template>
+        </listbox>
+    </vbox>
+</window>
