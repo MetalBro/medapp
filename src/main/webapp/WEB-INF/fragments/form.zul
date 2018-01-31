@@ -1,14 +1,11 @@
 <!--<?link rel="stylesheet" type="text/css" href="/style.css"?>-->
 <window id="modalForm"
+        mode="modal"
         closable="true"
         title="Procedure's form"
-        apply="ru.hostapp.web.procedure.FormController"
+        apply="ru.hostapp.web.procedure.FormController, ru.hostapp.web.procedure.ProcedureAdminController"
         border="normal" hflex="1" vflex="1"
         >
-    <!--contentStyle="overflow:auto"-->
-
-    <!--<caption src="/imgs/profile.png" sclass="fn-caption"-->
-             <!--label="Profile (MVC)"/>-->
     <vlayout>
         <grid width="600px">
             <columns>
@@ -16,16 +13,19 @@
                 <column/>
             </columns>
             <rows>
-                <row>
-                    <cell sclass="row-title">Procedure :</cell>
-                    <cell><label id="procedure"/></cell>
+                <row visible="false">
+                    <cell>
+                        <intbox id="intboxProcedureId" visible="true"
+                                value="${arg.procedureId}"/>
+                    </cell>
                 </row>
                 <row>
                     <cell sclass="row-title">Name :</cell>
                     <cell>
                         <textbox id="name"
                                  constraint="no empty: Please enter procedure's name"
-                                 hflex="1"/>
+                                 hflex="1"
+                                 value="${arg.name}"/>
                     </cell>
                 </row>
                 <row>
@@ -33,13 +33,15 @@
                     <cell>
                         <textbox id="specialist"
                                  constraint="no empty: Please enter the name of the specialist"
-                                 hflex="1"/>
+                                 hflex="1"
+                                 value="${arg.specialist}"/>
                     </cell>
                 </row>
                 <row>
                     <cell sclass="row-title">Price (RUB) :</cell>
-                    <cell><decimalbox id="price" format="######.##" constraint="no empty, no negative, no zero" maxlength="8"
-                                   width="100px"/>
+                    <cell><decimalbox id="price" format="######.##" constraint="no empty, no negative" maxlength="9"
+                                   width="100px"
+                                   value="${arg.price}"/>
                     </cell>
                 </row>
                 <row>
@@ -61,16 +63,15 @@
                 </row>
                 <row>
                     <cell sclass="row-title">Room :</cell>
-                    <cell><intbox id="room" constraint="no empty, no negative, no zero"
-                                width="100px"/>
+                    <cell><intbox id="room" constraint="no empty, no negative" maxlength="6"
+                                width="100px"
+                                value="${arg.room}"/>
                     </cell>
                 </row>
             </rows>
         </grid>
-        <!--<div>You are editing <label id="nameLabel"/> procedure.</div>-->
         <hlayout>
             <button id="saveProcedure" label="Save"/>
-            <!--<button id="reloadProfile" label="Reload"/>-->
         </hlayout>
     </vlayout>
 </window>

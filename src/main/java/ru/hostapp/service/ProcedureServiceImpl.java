@@ -24,14 +24,7 @@ public class ProcedureServiceImpl implements ProcedureService{
 
     @Override
     @CacheEvict(value = "procedures", allEntries = true)
-    public Procedure create(Procedure procedure) {
-        Assert.notNull(procedure, "procedure must not be null");
-        return procedureRepository.save(procedure);
-    }
-
-    @Override
-    @CacheEvict(value = "procedures", allEntries = true)
-    public Procedure update(Procedure procedure) {
+    public Procedure createOrUpdate(Procedure procedure) {
         Assert.notNull(procedure, "procedure must not be null");
         return procedureRepository.save(procedure);
     }

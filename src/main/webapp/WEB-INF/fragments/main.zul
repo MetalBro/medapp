@@ -1,24 +1,41 @@
-<window title="List of procedures you can take" border="normal" apply="ru.hostapp.web.RootController">
+<window title="List of procedures you can take" border="normal" contentStyle="overflow:auto;" width="1024px"
+        apply="ru.hostapp.web.RootController">
+        <!--apply="ru.hostapp.web.RootController, ru.hostapp.web.procedure.ProcedureAdminController">-->
     <vbox spacing="5">
         <hbox align="left" spacing="2">
-            <button id="showAllButton" label="Show list of all available procedures"/>
-            <button id="addButton" label="Add procedure" apply="ru.hostapp.web.procedure.ProcedureAdminController"/>
+            <!--<button id="refresButton" label="Show list of all available procedures"/>-->
+            <button id="refreshButton" label="Refresh"/>
+            <div align="right">
+                <button id="addButton" label="Add procedure" apply="ru.hostapp.web.procedure.ProcedureAdminController"/>
+            </div>
         </hbox>
-        <listbox id="procedureListBox" rows="10" emptyMessage="No procedure found in the result">
-            <listhead>
+        <listbox id="procedureListBox" rows="5" hflex="1" emptyMessage="No procedure found in the result"
+                 apply="ru.hostapp.web.UpRootController">
+            <listhead sizable="true">
                 <listheader label="Name" />
                 <listheader label="Specialist" />
-                <listheader label="Price, RUB" />
-                <listheader label="Date" />
-                <listheader label="Room" />
+                <listheader label="Price, RUB" width="120px"/>
+                <listheader label="Date" width="165px"/>
+                <listheader label="Room" width="82px"/>
+                <listheader width="130px"/>
             </listhead>
             <template name="model">
-                <listitem>
+                <listitem value="${each}">
                     <listcell label="${each.name}"></listcell>
                     <listcell label="${each.specialist}"></listcell>
                     <listcell label="${each.price}"></listcell>
                     <listcell label="${each.date}"></listcell>
                     <listcell label="${each.room}"></listcell>
+                    <listcell >
+                        <vbox spacing="5">
+                            <button forward="onClick=procedureListBox.onDelete"
+                                    label="Delete" width="110px"
+                                    apply="ru.hostapp.web.procedure.ProcedureAdminController"/>
+                            <button forward="onClick=procedureListBox.onUpdate"
+                                    label="Update" width="110px"
+                                    apply="ru.hostapp.web.procedure.ProcedureAdminController"/>
+                        </vbox>
+                    </listcell>
                 </listitem>
             </template>
         </listbox>

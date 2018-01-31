@@ -20,7 +20,7 @@ CREATE TABLE procedures
   id               INTEGER PRIMARY KEY DEFAULT nextval('global_seq'),
   name             VARCHAR(200),
   specialist       VARCHAR(255),
-  price            NUMERIC(6,2),
+  price            NUMERIC(20,2),
 --   date
   date             VARCHAR(20),
   room             INTEGER,

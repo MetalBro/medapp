@@ -1,10 +1,13 @@
 <zk>
+    <!--<borderlayout hflex="1" vflex="1">-->
     <borderlayout hflex="1" vflex="1">
         <north height="10%" border="none" >
             <include src="WEB-INF/fragments/header.zul"/>
         </north>
-        <center id="mainContent" autoscroll="true">
-            <include src="WEB-INF/fragments/main.zul"/>
+        <center id="mainContent" autoscroll="true" >
+            <vbox width="100%" height="100%" align="center">
+                <include src="WEB-INF/fragments/main.zul"/>
+            </vbox>
         </center>
     </borderlayout>
 </zk>

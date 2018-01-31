@@ -6,9 +6,7 @@ import java.util.List;
 
 public interface ProcedureService {
 
-    Procedure create(Procedure procedure);
-
-    Procedure update(Procedure procedure);
+    Procedure createOrUpdate(Procedure procedure);
 
     void delete(int id);
 
