@@ -21,7 +21,6 @@ CREATE TABLE procedures
   name             VARCHAR(200)                     NOT NULL,
   specialist       VARCHAR(255)                     NOT NULL,
   price            NUMERIC(20,2)                     NOT NULL,
-  --   date
   date             VARCHAR(20)                      NOT NULL,
   room             INTEGER                          NOT NULL,
   CONSTRAINT procedures_unique_idx UNIQUE (specialist, date, room)

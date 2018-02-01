@@ -9,7 +9,7 @@
                 <button id="addButton" label="Add procedure" apply="ru.hostapp.web.procedure.ProcedureAdminController"/>
             </div>
         </hbox>
-        <listbox id="procedureListBox" rows="5" hflex="1" emptyMessage="No procedure found in the result"
+        <listbox id="procedureListBox" mold="paging" pageSize="5" hflex="1" emptyMessage="No procedure found in the result"
                  apply="ru.hostapp.web.UpRootController">
             <listhead sizable="true">
                 <listheader label="Name" />
