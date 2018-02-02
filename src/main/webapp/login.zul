@@ -1,12 +1,11 @@
 <zk>
     <div height="100%">
-        <!--<template name="center">-->
             <hbox vflex="1" hflex="1" align="center"
                   pack="center" spacing="20px">
                 <vlayout>
                     <window id="loginWin"
                             apply="ru.hostapp.web.LoginController"
-                            title="Login with you name" border="normal" hflex="min">
+                            title="Login with your email" border="normal" hflex="min">
                         <vbox hflex="min" align="center">
                             <grid hflex="min">
                                 <columns>
@@ -28,13 +27,12 @@
                             <label id="message" sclass="warn" value="&#160;" />
                             <hbox align="center">
                                 <button id="login" label="Login" />
-                                <button id="setGuest" label="Login as Guest" />
-                                <button id="setAdmin" label="Login as Admin" />
+                                <!--<button id="setGuest" label="Login as Guest" />-->
+                                <!--<button id="setAdmin" label="Login as Admin" />-->
                             </hbox>
                         </vbox>
                     </window>
                 </vlayout>
             </hbox>
-        <!--</template>-->
     </div>
 </zk>

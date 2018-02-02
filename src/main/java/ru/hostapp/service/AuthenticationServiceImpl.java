@@ -2,12 +2,8 @@ package ru.hostapp.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Session;
 import org.zkoss.zk.ui.Sessions;
-import org.zkoss.zk.ui.select.SelectorComposer;
-import org.zkoss.zk.ui.select.annotation.VariableResolver;
-import org.zkoss.zk.ui.select.annotation.WireVariable;
 import ru.hostapp.model.User;
 import ru.hostapp.model.UserCredential;
 
@@ -32,7 +28,6 @@ public class AuthenticationServiceImpl implements AuthenticationService, Seriali
         }
 
         Session sess = Sessions.getCurrent();
-//        UserCredential cre = new UserCredential(user.getAccount(),user.getFullName());
         UserCredential cre = new UserCredential(user.getEmail(),user.getName());
         cre.addRole(user.getRole());
         sess.setAttribute("userCredential",cre);
@@ -56,6 +51,4 @@ public class AuthenticationServiceImpl implements AuthenticationService, Seriali
         }
         return cre;
     }
-
-
 }

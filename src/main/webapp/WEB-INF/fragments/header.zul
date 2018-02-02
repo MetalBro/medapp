@@ -1,7 +1,0 @@
-<?taglib uri="security.tld" prefix="sec"?>
-<window border="normal" contentStyle="overflow:auto;" width="1024px"
-    apply="ru.hostapp.web.LoginController">
-
-
-
-</window>

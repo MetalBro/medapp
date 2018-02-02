@@ -23,7 +23,6 @@ import java.util.Set;
 
 @VariableResolver(org.zkoss.zkplus.spring.DelegatingVariableResolver.class)
 public class ProcedureAdminController extends UpRootController {
-//public class ProcedureAdminController extends SelectorComposer<Component>{
 
     private static final long serialVersionUID = 1L;
 

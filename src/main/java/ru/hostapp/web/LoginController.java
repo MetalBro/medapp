@@ -11,12 +11,10 @@ import org.zkoss.zul.Label;
 import org.zkoss.zul.Textbox;
 import ru.hostapp.model.UserCredential;
 import ru.hostapp.service.AuthenticationService;
-import ru.hostapp.service.AuthenticationServiceImpl;
 
 @VariableResolver(org.zkoss.zkplus.spring.DelegatingVariableResolver.class)
 public class LoginController extends SelectorComposer<Component> {
 
-    //wire components
     @Wire
     Textbox account;
     @Wire
@@ -24,7 +22,6 @@ public class LoginController extends SelectorComposer<Component> {
     @Wire
     Label message;
 
-    //services
     @WireVariable
     AuthenticationService authService;
 
