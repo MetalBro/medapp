@@ -10,7 +10,7 @@
 
     <function>
         <name>isAllGranted</name>
-        <function-class>ru.hostapp.service.AuthenticationServiceImpl</function-class>
+        <function-class>ru.hostapp.util.SecurityUtil</function-class>
         <function-signature>boolean isAllGranted()
         </function-signature>
     </function>

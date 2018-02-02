@@ -33,7 +33,6 @@
                             </hbox>
                         </vbox>
                     </window>
-                    (use account='admin@gmail.com' and password='admin' to login)
                 </vlayout>
             </hbox>
         <!--</template>-->

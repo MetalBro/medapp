@@ -1,3 +1,4 @@
+<?taglib uri="security.tld" prefix="sec"?>
 <window title="List of procedures you can take" border="normal" contentStyle="overflow:auto;" width="1024px"
         apply="ru.hostapp.web.RootController">
         <!--apply="ru.hostapp.web.RootController, ru.hostapp.web.procedure.ProcedureAdminController">-->
@@ -6,10 +7,14 @@
             <!--<button id="refresButton" label="Show list of all available procedures"/>-->
             <button id="refreshButton" label="Refresh"/>
             <div align="right">
-                <button id="addButton" label="Add procedure" apply="ru.hostapp.web.procedure.ProcedureAdminController"/>
+                <button id="addButton"
+                        label="Add procedure"
+                        disabled="${not sec:isAllGranted()}"
+                        apply="ru.hostapp.web.procedure.ProcedureAdminController"/>
             </div>
         </hbox>
-        <listbox id="procedureListBox" mold="paging" pageSize="5" hflex="1" emptyMessage="No procedure found in the result"
+
+        <listbox id="procedureListBox" height="610px" mold="paging" pageSize="${sec:isAllGranted() ? '5' : '6'}" hflex="1" emptyMessage="No procedure found in the result"
                  apply="ru.hostapp.web.UpRootController">
             <listhead sizable="true">
                 <listheader label="Name" />
@@ -20,7 +25,7 @@
                 <listheader width="130px"/>
             </listhead>
             <template name="model">
-                <listitem value="${each}">
+                <listitem value="${each}" height="80px">
                     <listcell label="${each.name}"></listcell>
                     <listcell label="${each.specialist}"></listcell>
                     <listcell label="${each.price}"></listcell>
@@ -30,9 +35,11 @@
                         <vbox spacing="5">
                             <button forward="onClick=procedureListBox.onDelete"
                                     label="Delete" width="110px"
+                                    if="${sec:isAllGranted()}"
                                     apply="ru.hostapp.web.procedure.ProcedureAdminController"/>
                             <button forward="onClick=procedureListBox.onUpdate"
                                     label="Update" width="110px"
+                                    if="${sec:isAllGranted()}"
                                     apply="ru.hostapp.web.procedure.ProcedureAdminController"/>
                         </vbox>
                     </listcell>

@@ -57,7 +57,5 @@ public class AuthenticationServiceImpl implements AuthenticationService, Seriali
         return cre;
     }
 
-    public boolean isAllGranted(){
-        return getUserCredential().hasRole("ROLE_ADMIN");
-    }
+
 }
