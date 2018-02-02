@@ -13,7 +13,7 @@ import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zul.*;
 import ru.hostapp.model.Procedure;
 import ru.hostapp.service.ProcedureService;
-import ru.hostapp.web.UpRootController;
+import ru.hostapp.web.RootController;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.Set;
 
 @VariableResolver(org.zkoss.zkplus.spring.DelegatingVariableResolver.class)
-public class ProcedureAdminController extends UpRootController {
+public class ProcedureAdminController extends RootController {
 
     private static final long serialVersionUID = 1L;
 

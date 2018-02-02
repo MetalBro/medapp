@@ -8,7 +8,6 @@ import org.zkoss.zk.ui.select.annotation.WireVariable;
 import org.zkoss.zul.*;
 import ru.hostapp.model.Day;
 import ru.hostapp.service.ProcedureService;
-import ru.hostapp.web.UpRootController;
 
 import java.util.List;
 import java.util.stream.Collectors;

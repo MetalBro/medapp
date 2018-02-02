@@ -1,5 +1,5 @@
 <window title="List of procedures you can take" border="normal" contentStyle="overflow:auto;" width="1024px"
-        apply="ru.hostapp.web.RootController">
+        apply="ru.hostapp.web.IndexMainController">
     <vbox spacing="5">
         <div style="float:right;">
             <button
@@ -24,7 +24,7 @@
         </hbox>
 
         <listbox id="procedureListBox" height="610px" mold="paging" pageSize="${sec:isAllGranted() ? '5' : '6'}" hflex="1" emptyMessage="No procedure found in the result"
-                 apply="ru.hostapp.web.UpRootController">
+                 apply="ru.hostapp.web.RootController">
             <listhead sizable="true">
                 <listheader label="Name" />
                 <listheader label="Specialist" />
