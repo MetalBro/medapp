@@ -25,6 +25,9 @@
         <spring.version>5.0.2.RELEASE</spring.version>
         <spring-data-jpa.version>2.0.2.RELEASE</spring-data-jpa.version>
 
+        <!--ZK-->
+        <zk.version>8.5.0</zk.version>
+
         <tomcat.version>9.0.1</tomcat.version>
 
         <!--DB-->
@@ -96,22 +99,22 @@
         <dependency>
             <groupId>org.zkoss.zk</groupId>
             <artifactId>zkplus</artifactId>
-            <version>8.5.0</version>
+            <version>${zk.version}</version>
         </dependency>
         <dependency>
             <groupId>org.zkoss.zk</groupId>
             <artifactId>zhtml</artifactId>
-            <version>8.5.0</version>
+            <version>${zk.version}</version>
         </dependency>
         <dependency>
             <groupId>org.zkoss.zk</groupId>
             <artifactId>zkbind</artifactId>
-            <version>8.5.0</version>
+            <version>${zk.version}</version>
         </dependency>
         <dependency>
             <groupId>org.zkoss.zk</groupId>
             <artifactId>zul</artifactId>
-            <version>8.5.0</version>
+            <version>${zk.version}</version>
         </dependency>
         <!--<dependency>-->
             <!--<groupId>commons-io</groupId>-->

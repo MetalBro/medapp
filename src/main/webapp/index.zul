@@ -1,3 +1,4 @@
+<?init class="ru.hostapp.web.authentication.AuthenticationInit"?>
 <zk>
     <!--<borderlayout hflex="1" vflex="1">-->
     <borderlayout hflex="1" vflex="1">

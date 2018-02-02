@@ -3,7 +3,8 @@ DELETE FROM procedures;
 ALTER SEQUENCE global_seq RESTART WITH 100000;
 
 INSERT INTO users (name, email, password, role) VALUES
-  ('Admin', 'admin@gmail.com', 'admin', 'ROLE_ADMIN');        --100000
+  ('Admin', 'admin@gmail.com', 'admin', 'ROLE_ADMIN'),        --100000
+  ('Guest', 'guest@gmail.com', 'guest', 'ROLE_GUEST');        --100001
 
 INSERT INTO procedures (name, specialist, price, date, room) VALUES
   ('Electrocardiogram', 'Ivanov Petr', 1000, 'Monday, 12:00', 124),

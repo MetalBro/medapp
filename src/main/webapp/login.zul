@@ -1,0 +1,41 @@
+<zk>
+    <div height="100%">
+        <!--<template name="center">-->
+            <hbox vflex="1" hflex="1" align="center"
+                  pack="center" spacing="20px">
+                <vlayout>
+                    <window id="loginWin"
+                            apply="ru.hostapp.web.LoginController"
+                            title="Login with you name" border="normal" hflex="min">
+                        <vbox hflex="min" align="center">
+                            <grid hflex="min">
+                                <columns>
+                                    <column hflex="min" align="right" />
+                                    <column />
+                                </columns>
+                                <rows>
+                                    <row>
+                                        Account :
+                                        <textbox id="account" width="200px" />
+                                    </row>
+                                    <row>
+                                        Password :
+                                        <textbox id="password" type="password"
+                                                 width="200px" />
+                                    </row>
+                                </rows>
+                            </grid>
+                            <label id="message" sclass="warn" value="&#160;" />
+                            <hbox align="center">
+                                <button id="login" label="Login" />
+                                <button id="setGuest" label="Login as Guest" />
+                                <button id="setAdmin" label="Login as Admin" />
+                            </hbox>
+                        </vbox>
+                    </window>
+                    (use account='admin@gmail.com' and password='admin' to login)
+                </vlayout>
+            </hbox>
+        <!--</template>-->
+    </div>
+</zk>
