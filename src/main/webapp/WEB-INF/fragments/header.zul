@@ -1,5 +1,7 @@
-<div>
-    <vbox hflex="1" vflex="1" align="center">
+<?taglib uri="security.tld" prefix="sec"?>
+<window border="normal" contentStyle="overflow:auto;" width="1024px"
+    apply="ru.hostapp.web.LoginController">
 
-    </vbox>
-</div>
+
+
+</window>

@@ -15,4 +15,14 @@ public class SecurityUtil {
         }
         return cre.hasRole("ROLE_ADMIN");
     }
+
+    public static boolean isAuthorized(){
+        Session sess = Sessions.getCurrent();
+        UserCredential cre = (UserCredential)sess.getAttribute("userCredential");
+        if(cre==null){
+            cre = new UserCredential();//new a anonymous user and set to session
+            sess.setAttribute("userCredential",cre);
+        }
+        return !cre.isAnonymous();
+    }
 }

@@ -25,8 +25,8 @@ public class AuthenticationInit implements Initiator {
 
         UserCredential cre = authService.getUserCredential();
         if(cre==null || cre.isAnonymous()){
-//            Executions.sendRedirect("/chapter8/login.zul");
             Executions.sendRedirect("login.zul");
+//            Executions.sendRedirect("index.zul");
             return;
         }
     }

@@ -14,5 +14,11 @@
         <function-signature>boolean isAllGranted()
         </function-signature>
     </function>
+    <function>
+        <name>isAuthorized</name>
+        <function-class>ru.hostapp.util.SecurityUtil</function-class>
+        <function-signature>boolean isAuthorized()
+        </function-signature>
+    </function>
 
 </taglib>

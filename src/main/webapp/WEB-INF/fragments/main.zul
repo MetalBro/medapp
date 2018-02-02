@@ -1,16 +1,21 @@
-<?taglib uri="security.tld" prefix="sec"?>
+<!--<?taglib uri="security.tld" prefix="sec"?>-->
 <window title="List of procedures you can take" border="normal" contentStyle="overflow:auto;" width="1024px"
         apply="ru.hostapp.web.RootController">
         <!--apply="ru.hostapp.web.RootController, ru.hostapp.web.procedure.ProcedureAdminController">-->
     <vbox spacing="5">
-        <hbox align="left" spacing="2">
+        <hbox spacing="2">
             <!--<button id="refresButton" label="Show list of all available procedures"/>-->
             <button id="refreshButton" label="Refresh"/>
-            <div align="right">
-                <button id="addButton"
+            <button id="addButton"
                         label="Add procedure"
                         disabled="${not sec:isAllGranted()}"
                         apply="ru.hostapp.web.procedure.ProcedureAdminController"/>
+            <div style="float:right;">
+                <button
+                        id="authorize"
+                        disabled="${sec:isAuthorized()}"
+                        label="Authorization"
+                        apply="ru.hostapp.web.LoginController"/>
             </div>
         </hbox>
 

@@ -46,6 +46,15 @@ public class LoginController extends SelectorComposer<Component> {
         doLogin("admin@gmail.com", "admin");
     }
 
+    @Listen("onClick=#authorize")
+    public void doAuthorize(){
+        UserCredential cre = authService.getUserCredential();
+        if(cre==null || cre.isAnonymous()){
+            Executions.sendRedirect("login.zul");
+            return;
+        }
+    }
+
     private void doLogin(String name, String password){
         if(!authService.login(name,password)){
             message.setValue("account or password are not correct.");
