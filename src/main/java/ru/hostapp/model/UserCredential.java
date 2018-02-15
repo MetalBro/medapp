@@ -8,10 +8,10 @@ public class UserCredential implements Serializable {
     private static final long serialVersionUID = 1L;
 
 //    String account;
-    String account; // account = email
-    String name;
+    private String account; // account = email
+    private String name;
 
-    Set<String> roles = new HashSet<String>();
+    private Set<String> roles = new HashSet<String>();
 
     public UserCredential(String account, String name) {
         this.account = account;

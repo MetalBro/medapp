@@ -83,7 +83,7 @@ public class ProcedureAdminController extends RootController {
 
     @Listen("onClick=#saveProcedure")
     public void doSaveProcedure(){
-        Procedure procedure = null;
+        Procedure procedure;
 
         if (intboxProcedureId.getValue() == null) procedure = new Procedure();
         else procedure = procedureService.get(intboxProcedureId.getValue());

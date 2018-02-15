@@ -16,14 +16,14 @@ import ru.hostapp.service.AuthenticationService;
 public class LoginController extends SelectorComposer<Component> {
 
     @Wire
-    Textbox account;
+    private Textbox account;
     @Wire
-    Textbox password;
+    private Textbox password;
     @Wire
-    Label message;
+    private Label message;
 
     @WireVariable
-    AuthenticationService authService;
+    private AuthenticationService authService;
 
 
     @Listen("onClick=#login; onOK=#loginWin")
@@ -48,7 +48,6 @@ public class LoginController extends SelectorComposer<Component> {
         UserCredential cre = authService.getUserCredential();
         if(cre==null || cre.isAnonymous()){
             Executions.sendRedirect("login.zul");
-            return;
         }
     }
 

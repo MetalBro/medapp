@@ -9,7 +9,6 @@ import ru.hostapp.repository.UserRepository;
 @Service
 public class UserServiceImpl implements UserService {
 
-//    @Autowired
     private UserRepository userRepository;
 
     @Autowired

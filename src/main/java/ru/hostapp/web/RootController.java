@@ -21,10 +21,10 @@ public class RootController extends SelectorComposer<Component> {
     private static final long serialVersionUID = 1L;
 
     @Wire
-    public Listbox procedureListBox;
+    protected Listbox procedureListBox;
 
     @Wire
-    public Button refreshButton;
+    protected Button refreshButton;
 
     @WireVariable("procedureServiceImpl")
     private ProcedureService procedureService;

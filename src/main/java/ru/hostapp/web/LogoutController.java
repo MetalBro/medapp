@@ -12,7 +12,7 @@ import ru.hostapp.service.AuthenticationService;
 public class LogoutController extends SelectorComposer<Component> {
 
     @WireVariable
-    AuthenticationService authService;
+    private AuthenticationService authService;
 
     @Listen("onClick=#logout")
     public void doLogout(){
