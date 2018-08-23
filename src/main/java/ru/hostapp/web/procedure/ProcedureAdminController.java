@@ -1,6 +1,7 @@
 package ru.hostapp.web.procedure;
 
 
+import org.zkoss.bind.BindUtils;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.Events;
@@ -104,9 +105,10 @@ public class ProcedureAdminController extends RootController {
         procedure.setRoom(room.getValue());
 
         procedureService.createOrUpdate(procedure);
-
+        BindUtils.postGlobalCommand(null, null, "setAll", null);
         modalForm.onClose();
-        Clients.showNotification("Procedure Saved, please click \"Refresh\" button");
+        ;
+//        Clients.showNotification("Procedure Saved, please click \"Refresh\" button");
     }
 
     private Map getParamsMap(Procedure procedure){

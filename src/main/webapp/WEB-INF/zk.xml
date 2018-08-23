@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk>
+    <!-- TODO добавить коммент зачем тут это -->
+    <system-config>
+        <disable-event-thread>false</disable-event-thread>
+        <ui-factory-class>org.zkoss.zk.ui.http.SerializableUiFactory
+        </ui-factory-class>
+        <disable-zscript>false</disable-zscript>
+    </system-config>
+    <!-- TODO добавить коммент зачем тут это -->
+    <device-config>
+        <device-type>ajax</device-type>
+        <timeout-uri>/</timeout-uri>
+    </device-config>
+    <!-- TODO добавить коммент зачем тут это -->
+    <library-property>
+        <name>org.zkoss.zul.progressbox.position</name>
+        <value>center</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.theme.preferred</name>
+        <value>sapphire</value> <!-- or silvertail, atlantic, deepsea, gardensalad etc. -->
+    </library-property>
+    <!-- Для синхронизации контекста spring и zk, workaround -->
+    <listener>
+        <description>ThreadLocal Synchronization Listener</description>
+        <listener-class>org.zkoss.zkplus.util.ThreadLocalListener
+        </listener-class>
+    </listener>
+    <preference>
+        <name>ThreadLocal</name>
+        <value>
+            org.springframework.web.context.request.RequestContextHolder=requestAttributesHolder,inheritableRequestAttributesHolder;
+        </value>
+    </preference>
+</zk>

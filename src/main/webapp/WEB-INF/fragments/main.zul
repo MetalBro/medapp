@@ -1,6 +1,35 @@
 <window title="List of procedures you can take" border="normal" contentStyle="overflow:auto;" width="1024px"
         apply="ru.hostapp.web.IndexMainController">
     <vbox spacing="5">
+        <menupopup id="m1">
+            <menuitem label="Action" />
+            <menuitem label="Another action" />
+            <menuitem label="Something else here" />
+            <menuseparator />
+            <menuitem label="Separated link" />
+        </menupopup>
+        <div sclass="btn-group">
+            <button>Left</button>
+            <button>Middle</button>
+            <button dir="reverse" sclass="btn-default dropdown-toggle"
+                    popup="m1, after_start" iconSclass="caret">
+                Action
+            </button>
+        </div>
+        <html>
+            <!--<div class="container">-->
+                <!--<h1>Code Snippets</h1>-->
+                <!--<p>Inline snippets of code should be embedded in the code element:</p>-->
+                <!--<p>The following HTML elements: <code>span</code>, <code>section</code>, and <code>div</code> defines a section in a document.</p>-->
+
+            <!--</div>-->
+            <div class="jumbotron">
+                <h1>Bootstrap Tutorial</h1>
+                <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on the web.</p>
+            </div>
+            <p>This is some text.</p>
+            <p>This is another text.</p>
+        </html>
         <div style="float:right;">
             <button
                     id="logout"
@@ -9,15 +38,15 @@
                     apply="ru.hostapp.web.LogoutController"/>
         </div>
         <div style="float:right;">
-            <button
+            <button sclass="button4"
                     id="authorize"
                     if="${not sec:isAuthorized()}"
                     label="Authorization"
                     apply="ru.hostapp.web.LoginController"/>
         </div>
         <hbox spacing="2">
-            <button id="refreshButton" label="Refresh"/>
-            <button id="addButton"
+            <button iconSclass="glyphicon glyphicon-refresh" sclass="button6" id="refreshButton" label="Refresh"/>
+            <button iconSclass="glyphicon glyphicon-plus" sclass="button2" id="addButton"
                         label="Add procedure"
                         if="${sec:isAllGranted()}"
                         apply="ru.hostapp.web.procedure.ProcedureAdminController"/>
@@ -42,11 +71,14 @@
                     <listcell label="${each.room}"></listcell>
                     <listcell >
                         <vbox spacing="5">
-                            <button forward="onClick=procedureListBox.onDelete"
+                            <button sclass="button3"
+                                    forward="onClick=procedureListBox.onDelete"
                                     label="Delete" width="110px"
                                     if="${sec:isAllGranted()}"
                                     apply="ru.hostapp.web.procedure.ProcedureAdminController"/>
-                            <button forward="onClick=procedureListBox.onUpdate"
+                            <button
+                                    sclass="button6"
+                                    forward="onClick=procedureListBox.onUpdate"
                                     label="Update" width="110px"
                                     if="${sec:isAllGranted()}"
                                     apply="ru.hostapp.web.procedure.ProcedureAdminController"/>
@@ -55,5 +87,57 @@
                 </listitem>
             </template>
         </listbox>
+
+        <!--<div sclass="container">-->
+
+        <!--</div>-->
+        <html>
+            <h1>h1 heading <small>secondary text</small></h1>
+            <h2>h2 heading <small>secondary text</small></h2>
+            <h3>h3 heading <small>secondary text</small></h3>
+            <h4>h4 heading <small>secondary text</small></h4>
+            <h5>h5 heading <small>secondary text</small></h5>
+            <h6>h6 heading <small>secondary text</small></h6>
+
+            <div sclass="container">
+                <h2>Alerts</h2>
+                <div class="alert alert-success">
+                    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+                </div>
+                <div class="alert alert-info">
+                    <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+                </div>
+                <div class="alert alert-warning">
+                    <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+                </div>
+                <div class="alert alert-danger">
+                    <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+                </div>
+            </div>
+
+            <h2>Badges</h2>
+            <a href="#">News <span class="badge">5</span></a><br/>
+            <a href="#">Comments <span class="badge">10</span></a><br/>
+            <a href="#">Updates <span class="badge">2</span></a>
+
+            <h1>Example <span class="label label-default">New</span></h1>
+            <h2>Example <span class="label label-primary">New</span></h2>
+            <h3>Example <span class="label label-success">New</span></h3>
+            <h4>Example <span class="label label-info">New</span></h4>
+            <h5>Example <span class="label label-danger">New</span></h5>
+            <h6>Example <span class="label label-warning">New</span></h6>
+            <div sclass="container">
+                <h2>Simple Collapsible</h2>
+                <a href="#demo" class="btn btn-info" data-toggle="collapse">Simple collapsible</a>
+                <div id="demo" class="collapse">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+            </div>
+        </html>
     </vbox>
+
+
+
 </window>

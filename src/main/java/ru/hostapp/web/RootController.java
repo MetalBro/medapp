@@ -1,5 +1,6 @@
 package ru.hostapp.web;
 
+import org.zkoss.bind.annotation.GlobalCommand;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
@@ -30,6 +31,7 @@ public class RootController extends SelectorComposer<Component> {
     private ProcedureService procedureService;
 
     @Listen("onClick = #refreshButton")
+    @GlobalCommand
     public void setAll(){
         List<Procedure> procedureList = procedureService.getAll();
         procedureList.sort(Comparator.comparing(item -> item.getName().toLowerCase()));

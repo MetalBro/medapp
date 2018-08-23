@@ -1,4 +1,13 @@
 <?taglib uri="WEB-INF/tld/security.tld" prefix="sec"?>
+<?link rel="stylesheet" type="text/css" href="resources/css/buttons.css"?>
+<?link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css"?>
+<!--&lt;!&ndash; jQuery library &ndash;&gt;-->
+<!--<?script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"?>-->
+<?script src="resources/js/jquery-3.3.1.min.js"?>
+
+        <!--&lt;!&ndash; Latest compiled JavaScript &ndash;&gt;-->
+<?script src="resources/js/bootstrap.min.js"?>
+<!--<?script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"?>-->
 <zk>
     <borderlayout hflex="1" vflex="1">
         <center id="mainContent" autoscroll="true" >
